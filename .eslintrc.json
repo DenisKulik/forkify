@@ -12,7 +12,11 @@
   "rules": {
     "linebreak-style": ["error", "windows"],
     "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
-    "comma-dangle": ["error", "only-multiline"]
+    "comma-dangle": ["error", "only-multiline"],
+    "no-tabs": ["error", { "allowIndentationTabs": true }],
+    "indent": ["error", 2, { "ignoredNodes": ["TemplateLiteral *"] }],
+    "function-paren-newline": "off",
+    "no-use-before-define": "off",
+    "arrow-body-style": 0
   }
 }
-
