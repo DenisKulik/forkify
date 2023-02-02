@@ -15,9 +15,7 @@
     "comma-dangle": ["error", "only-multiline"],
     "no-tabs": ["error", { "allowIndentationTabs": true }],
     "indent": ["error", 2, { "ignoredNodes": ["TemplateLiteral *"] }],
-    "import/no-extraneous-dependencies": {
-      "moduleDirectories": ["./"]
-    },
+    "import/no-extraneous-dependencies": "off",
     "function-paren-newline": "off",
     "no-use-before-define": "off",
     "arrow-body-style": 0
