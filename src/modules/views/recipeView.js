@@ -29,6 +29,11 @@ class RecipeView {
     this.#parentElement.insertAdjacentHTML('afterbegin', markup);
   }
 
+  // eslint-disable-next-line class-methods-use-this
+  addHandlerRender(handler) {
+    ['hashchange', 'load'].forEach((ev) => window.addEventListener(ev, handler));
+  }
+
   #generateMarkup() {
     return `
 			<figure class="recipe__fig">

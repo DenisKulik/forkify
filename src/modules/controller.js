@@ -14,11 +14,13 @@ async function controlRecipes() {
     // rendering recipe
     recipeView.render(model.state.recipe);
   } catch (err) {
-    // eslint-disable-next-line no-alert
-    alert(err);
+    // eslint-disable-next-line no-console
+    console.log(err);
   }
 }
 
-['hashchange', 'load'].forEach((ev) => {
-  window.addEventListener(ev, controlRecipes);
-});
+function init() {
+  recipeView.addHandlerRender(controlRecipes);
+}
+
+init();
