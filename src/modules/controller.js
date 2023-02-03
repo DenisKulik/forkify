@@ -14,8 +14,7 @@ async function controlRecipes() {
     // rendering recipe
     recipeView.render(model.state.recipe);
   } catch (err) {
-    // eslint-disable-next-line no-console
-    console.log(err);
+    recipeView.renderError();
   }
 }
 
