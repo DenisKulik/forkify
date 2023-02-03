@@ -18,6 +18,7 @@
     "import/no-extraneous-dependencies": "off",
     "function-paren-newline": "off",
     "no-use-before-define": "off",
+    "no-underscore-dangle": "off",
     "arrow-body-style": 0
   }
 }
