@@ -32,7 +32,7 @@ async function controlSearchResults() {
     await model.loadSearchResults(query);
 
     // render results
-    resultsView.render(model.state.search.results);
+    resultsView.render(model.getSearchResultPage());
   } catch (err) {
     // eslint-disable-next-line no-console
     console.log(err);
