@@ -2,6 +2,7 @@ import * as model from './model';
 import recipeView from './views/recipeView';
 import searchView from './views/searchView';
 import resultsView from './views/resultsView';
+import paginationView from './views/paginationView';
 
 async function controlRecipes() {
   try {
@@ -33,15 +34,24 @@ async function controlSearchResults() {
 
     // render results
     resultsView.render(model.getSearchResultPage());
+
+    // render initial pagination buttons
+    paginationView.render(model.state.search);
   } catch (err) {
     // eslint-disable-next-line no-console
     console.log(err);
   }
 }
 
+function controlPagination(page) {
+  resultsView.render(model.getSearchResultPage(page));
+  paginationView.render(model.state.search);
+}
+
 function init() {
   recipeView.addHandlerRender(controlRecipes);
   searchView.addHandlerSearch(controlSearchResults);
+  paginationView.addHandlerClick(controlPagination);
 }
 
 init();
