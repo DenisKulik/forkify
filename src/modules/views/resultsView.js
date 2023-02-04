@@ -13,9 +13,13 @@ class ResultsView extends View {
 
   // eslint-disable-next-line class-methods-use-this
   _generateMarkupPreview(res) {
+    const id = window.location.hash.slice(1);
+
     return `
 			<li class="preview">
-        <a class="preview__link" href="#${res.id}">
+        <a class="preview__link ${
+          res.id === id ? 'preview__link--active' : ''
+        }" href="#${res.id}">
         	<figure class="preview__fig">
           	<img src="${res.image}" alt="${res.title}" />
         	</figure>
