@@ -60,3 +60,12 @@ export function getSearchResultPage(page = state.search.page) {
 
   return state.search.results.slice(start, end);
 }
+
+export function updateServings(newServings) {
+  state.recipe.ingredients.forEach((ing) => {
+    // eslint-disable-next-line no-param-reassign
+    ing.quantity = (ing.quantity * newServings) / state.recipe.servings;
+  });
+
+  state.recipe.servings = newServings;
+}
