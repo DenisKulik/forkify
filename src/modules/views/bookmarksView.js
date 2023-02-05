@@ -8,6 +8,11 @@ class BookmarksView extends View {
 
   _message = '';
 
+  // eslint-disable-next-line class-methods-use-this
+  addHandlerRender(handler) {
+    window.addEventListener('load', handler);
+  }
+
   _generateMarkup() {
     return this._data
       .map((bookmark) => previewView.render(bookmark, false))
