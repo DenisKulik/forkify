@@ -3,7 +3,6 @@ import View from './View';
 class PreviewView extends View {
   _parentElement = '';
 
-  // eslint-disable-next-line class-methods-use-this
   _generateMarkup() {
     const id = window.location.hash.slice(1);
 

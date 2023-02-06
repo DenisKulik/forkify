@@ -9,7 +9,6 @@ class SearchView {
   }
 
   #clearInput() {
-    // eslint-disable-next-line no-return-assign
     return (this.#parentEl.querySelector('.search__field').value = '');
   }
 

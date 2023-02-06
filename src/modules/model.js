@@ -13,7 +13,6 @@ export const state = {
 };
 
 export async function loadRecipe(id) {
-  // eslint-disable-next-line no-useless-catch
   try {
     const data = await getJSON(`${API_URL}/${id}`);
 
@@ -29,7 +28,6 @@ export async function loadRecipe(id) {
       ingredients: recipe.ingredients,
     };
 
-    // eslint-disable-next-line no-return-assign, no-param-reassign
     if (state.bookmarks.some((bookmark) => bookmark.id === id)) {
       state.recipe.bookmarked = true;
     } else {
@@ -41,7 +39,6 @@ export async function loadRecipe(id) {
 }
 
 export async function loadSearchResults(query) {
-  // eslint-disable-next-line no-useless-catch
   try {
     state.search.query = query;
 
@@ -72,7 +69,6 @@ export function getSearchResultPage(page = state.search.page) {
 
 export function updateServings(newServings) {
   state.recipe.ingredients.forEach((ing) => {
-    // eslint-disable-next-line no-param-reassign
     ing.quantity = (ing.quantity * newServings) / state.recipe.servings;
   });
 

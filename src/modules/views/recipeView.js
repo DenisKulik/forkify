@@ -9,7 +9,6 @@ class RecipeView extends View {
 
   _message = '';
 
-  // eslint-disable-next-line class-methods-use-this
   addHandlerRender(handler) {
     ['hashchange', 'load'].forEach((ev) => window.addEventListener(ev, handler));
   }
@@ -119,7 +118,6 @@ class RecipeView extends View {
 		`;
   }
 
-  // eslint-disable-next-line class-methods-use-this
   _generateMarkupIngridient(ing) {
     return `
 			<li class="recipe__ingredient">

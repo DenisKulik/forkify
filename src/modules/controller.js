@@ -44,8 +44,7 @@ async function controlSearchResults() {
     // render initial pagination buttons
     paginationView.render(model.state.search);
   } catch (err) {
-    // eslint-disable-next-line no-console
-    console.log(err);
+    throw err;
   }
 }
 

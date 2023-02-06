@@ -15,11 +15,18 @@
     "comma-dangle": ["error", "only-multiline"],
     "no-tabs": ["error", { "allowIndentationTabs": true }],
     "indent": ["error", 2, { "ignoredNodes": ["TemplateLiteral *"] }],
-    "import/no-extraneous-dependencies": "off",
-    "function-paren-newline": "off",
-    "no-use-before-define": "off",
-    "no-underscore-dangle": "off",
-    "arrow-body-style": 0
+    "no-underscore-dangle": ["error", { "allowAfterThis": true }],
+    "no-use-before-define": ["error", { "functions": false }],
+    "no-param-reassign": ["error", { "props": false }],
+    "no-return-assign": ["error", "except-parens"],
+    "operator-linebreak": ["error", "after"],
+    "class-methods-use-this": [
+      "error",
+      { "exceptMethods": ["addHandlerRender", "_generateMarkupIngridient"] }
+    ],
+    "arrow-body-style": 0,
+    "consistent-return": "off",
+    "no-useless-catch": "off"
   }
 }
 

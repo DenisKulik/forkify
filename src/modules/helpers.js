@@ -9,7 +9,6 @@ export function timeout(s) {
 }
 
 export async function getJSON(url) {
-  // eslint-disable-next-line no-useless-catch
   try {
     const res = await Promise.race([fetch(url), timeout(TIMEOUT_SEC)]);
     const data = await res.json();

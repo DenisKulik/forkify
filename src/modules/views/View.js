@@ -3,7 +3,6 @@ import icons from '../../img/icons.svg';
 export default class View {
   _data;
 
-  // eslint-disable-next-line consistent-return
   render(data, render = true) {
     if (!data || (Array.isArray(data) && data.length === 0)) {
       return this.renderError();
@@ -37,7 +36,6 @@ export default class View {
 
       // update changed text
       if (
-        // eslint-disable-next-line operator-linebreak
         !newEl.isEqualNode(curEl) &&
         newEl.firstChild?.nodeValue.trim() !== ''
       ) {

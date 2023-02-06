@@ -8,7 +8,6 @@ class BookmarksView extends View {
 
   _message = '';
 
-  // eslint-disable-next-line class-methods-use-this
   addHandlerRender(handler) {
     window.addEventListener('load', handler);
   }
