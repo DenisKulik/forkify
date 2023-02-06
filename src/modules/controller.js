@@ -4,6 +4,7 @@ import searchView from './views/searchView';
 import resultsView from './views/resultsView';
 import bookmarksView from './views/bookmarksView';
 import paginationView from './views/paginationView';
+import addRecipeView from './views/addRecipeView';
 
 async function controlRecipes() {
   try {
@@ -80,6 +81,11 @@ function controlBookmarks() {
   bookmarksView.render(model.state.bookmarks);
 }
 
+// eslint-disable-next-line no-unused-vars
+function controlAddRecipe(recipe) {
+  // upload the new recipe data
+}
+
 function init() {
   bookmarksView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipes);
@@ -87,6 +93,7 @@ function init() {
   recipeView.addHandlerAddMarkbook(controlAddBookmark);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
+  addRecipeView.addHandlerUpload(controlAddRecipe);
 }
 
 init();
