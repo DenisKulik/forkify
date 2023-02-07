@@ -1,4 +1,5 @@
 import * as model from './model';
+import { MODAL_CLOSE_SEC } from './config';
 import recipeView from './views/recipeView';
 import searchView from './views/searchView';
 import resultsView from './views/resultsView';
@@ -81,8 +82,25 @@ function controlBookmarks() {
 }
 
 // eslint-disable-next-line no-unused-vars
-function controlAddRecipe(recipe) {
-  // upload the new recipe data
+async function controlAddRecipe(newRecipe) {
+  try {
+    // show loading spinner
+    addRecipeView.renderSpinner();
+
+    // upload the new recipe data
+    await model.uploadRecipe(newRecipe);
+
+    // render recipe
+    recipeView.render(model.state.recipe);
+
+    // success message
+    addRecipeView.renderMessage();
+
+    // close form window
+    setTimeout(() => addRecipeView.toggleWindow(), MODAL_CLOSE_SEC * 1000);
+  } catch (err) {
+    addRecipeView.renderError(err.message);
+  }
 }
 
 function init() {
